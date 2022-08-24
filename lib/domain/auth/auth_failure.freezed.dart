@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$AuthFaiure {
+mixin _$AuthFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() canceledByUser,
@@ -72,19 +72,19 @@ mixin _$AuthFaiure {
 }
 
 /// @nodoc
-abstract class $AuthFaiureCopyWith<$Res> {
-  factory $AuthFaiureCopyWith(
-          AuthFaiure value, $Res Function(AuthFaiure) then) =
-      _$AuthFaiureCopyWithImpl<$Res>;
+abstract class $AuthFailureCopyWith<$Res> {
+  factory $AuthFailureCopyWith(
+          AuthFailure value, $Res Function(AuthFailure) then) =
+      _$AuthFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AuthFaiureCopyWithImpl<$Res> implements $AuthFaiureCopyWith<$Res> {
-  _$AuthFaiureCopyWithImpl(this._value, this._then);
+class _$AuthFailureCopyWithImpl<$Res> implements $AuthFailureCopyWith<$Res> {
+  _$AuthFailureCopyWithImpl(this._value, this._then);
 
-  final AuthFaiure _value;
+  final AuthFailure _value;
   // ignore: unused_field
-  final $Res Function(AuthFaiure) _then;
+  final $Res Function(AuthFailure) _then;
 }
 
 /// @nodoc
@@ -96,7 +96,7 @@ abstract class _$$CanceledByUserCopyWith<$Res> {
 
 /// @nodoc
 class __$$CanceledByUserCopyWithImpl<$Res>
-    extends _$AuthFaiureCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
     implements _$$CanceledByUserCopyWith<$Res> {
   __$$CanceledByUserCopyWithImpl(
       _$CanceledByUser _value, $Res Function(_$CanceledByUser) _then)
@@ -113,7 +113,7 @@ class _$CanceledByUser implements CanceledByUser {
 
   @override
   String toString() {
-    return 'AuthFaiure.canceledByUser()';
+    return 'AuthFailure.canceledByUser()';
   }
 
   @override
@@ -203,7 +203,7 @@ class _$CanceledByUser implements CanceledByUser {
   }
 }
 
-abstract class CanceledByUser implements AuthFaiure {
+abstract class CanceledByUser implements AuthFailure {
   const factory CanceledByUser() = _$CanceledByUser;
 }
 
@@ -215,7 +215,7 @@ abstract class _$$ServerErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ServerErrorCopyWithImpl<$Res> extends _$AuthFaiureCopyWithImpl<$Res>
+class __$$ServerErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
     implements _$$ServerErrorCopyWith<$Res> {
   __$$ServerErrorCopyWithImpl(
       _$ServerError _value, $Res Function(_$ServerError) _then)
@@ -232,7 +232,7 @@ class _$ServerError implements ServerError {
 
   @override
   String toString() {
-    return 'AuthFaiure.serverError()';
+    return 'AuthFailure.serverError()';
   }
 
   @override
@@ -322,7 +322,7 @@ class _$ServerError implements ServerError {
   }
 }
 
-abstract class ServerError implements AuthFaiure {
+abstract class ServerError implements AuthFailure {
   const factory ServerError() = _$ServerError;
 }
 
@@ -335,7 +335,7 @@ abstract class _$$EmailAlreadyInUseCopyWith<$Res> {
 
 /// @nodoc
 class __$$EmailAlreadyInUseCopyWithImpl<$Res>
-    extends _$AuthFaiureCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
     implements _$$EmailAlreadyInUseCopyWith<$Res> {
   __$$EmailAlreadyInUseCopyWithImpl(
       _$EmailAlreadyInUse _value, $Res Function(_$EmailAlreadyInUse) _then)
@@ -352,7 +352,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
 
   @override
   String toString() {
-    return 'AuthFaiure.emailAlreadyInUse()';
+    return 'AuthFailure.emailAlreadyInUse()';
   }
 
   @override
@@ -442,7 +442,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   }
 }
 
-abstract class EmailAlreadyInUse implements AuthFaiure {
+abstract class EmailAlreadyInUse implements AuthFailure {
   const factory EmailAlreadyInUse() = _$EmailAlreadyInUse;
 }
 
@@ -456,7 +456,7 @@ abstract class _$$InvalidEmailAndPasswordCombinationCopyWith<$Res> {
 
 /// @nodoc
 class __$$InvalidEmailAndPasswordCombinationCopyWithImpl<$Res>
-    extends _$AuthFaiureCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
     implements _$$InvalidEmailAndPasswordCombinationCopyWith<$Res> {
   __$$InvalidEmailAndPasswordCombinationCopyWithImpl(
       _$InvalidEmailAndPasswordCombination _value,
@@ -476,7 +476,7 @@ class _$InvalidEmailAndPasswordCombination
 
   @override
   String toString() {
-    return 'AuthFaiure.invalidEmailAndPasswordCombination()';
+    return 'AuthFailure.invalidEmailAndPasswordCombination()';
   }
 
   @override
@@ -567,7 +567,7 @@ class _$InvalidEmailAndPasswordCombination
   }
 }
 
-abstract class InvalidEmailAndPasswordCombination implements AuthFaiure {
+abstract class InvalidEmailAndPasswordCombination implements AuthFailure {
   const factory InvalidEmailAndPasswordCombination() =
       _$InvalidEmailAndPasswordCombination;
 }
