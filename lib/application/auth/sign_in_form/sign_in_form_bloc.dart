@@ -16,8 +16,8 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
 
   SignInFormBloc(this._authFacade) : super(SignInFormState.initial()) {
     on<SignInFormEvent>(
-      (event, emit) {
-        event.map(
+      (event, emit) async {
+        await event.map(
           emailChanged: (event) => _onEmailChanged(event, emit),
           passwordChanged: (event) => _onPasswordChanged(event, emit),
           registerWithEmailAndPasswordPressed: (event) =>
@@ -31,10 +31,10 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     );
   }
 
-  void _onEmailChanged(
+  Future<void> _onEmailChanged(
     EmailChanged event,
     Emitter<SignInFormState> emit,
-  ) {
+  ) async {
     emit(
       state.copyWith(
         emailAddress: EmailAddress(event.emailStr),
@@ -43,10 +43,10 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     );
   }
 
-  void _onPasswordChanged(
+  Future<void> _onPasswordChanged(
     PasswordChanged event,
     Emitter<SignInFormState> emit,
-  ) {
+  ) async {
     emit(
       state.copyWith(
         password: Password(event.passwordStr),
@@ -55,27 +55,27 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     );
   }
 
-  void _onRegisterWithEmailAndPasswordPressed(
+  Future<void> _onRegisterWithEmailAndPasswordPressed(
     RegisterWithEmailAndPasswordPressed event,
     Emitter<SignInFormState> emit,
   ) async {
-    _performActionOnAuthFacadeWithEmailAndPassword(
+    await _performActionOnAuthFacadeWithEmailAndPassword(
       emit: emit,
       forwardedCall: _authFacade.registerWithEmailAndPassword,
     );
   }
 
-  void _onSignInWithEmailAndPasswordPressed(
+  Future<void> _onSignInWithEmailAndPasswordPressed(
     SignInWithEmailAndPasswordPressed event,
     Emitter<SignInFormState> emit,
   ) async {
-    _performActionOnAuthFacadeWithEmailAndPassword(
+    await _performActionOnAuthFacadeWithEmailAndPassword(
       emit: emit,
       forwardedCall: _authFacade.signInWithEmailAndPassword,
     );
   }
 
-  void _onSignInWithGooglePressed(
+  Future<void> _onSignInWithGooglePressed(
     SignInWithGooglePressed event,
     Emitter<SignInFormState> emit,
   ) async {
@@ -94,7 +94,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     ));
   }
 
-  void _performActionOnAuthFacadeWithEmailAndPassword({
+  Future<void> _performActionOnAuthFacadeWithEmailAndPassword({
     required Future<Either<AuthFailure, Unit>> Function({
       required EmailAddress email,
       required Password password,
