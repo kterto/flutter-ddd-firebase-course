@@ -7,14 +7,14 @@ packages:
       name: _fe_analyzer_shared
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "46.0.0"
+    version: "43.0.0"
   analyzer:
     dependency: transitive
     description:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.6.0"
+    version: "4.3.1"
   another_flushbar:
     dependency: "direct main"
     description:
@@ -36,6 +36,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.8.2"
+  auto_route:
+    dependency: "direct main"
+    description:
+      name: auto_route
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.1"
+  auto_route_generator:
+    dependency: "direct dev"
+    description:
+      name: auto_route_generator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.1"
   bloc:
     dependency: transitive
     description:
@@ -485,6 +499,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.1"
+  petitparser:
+    dependency: transitive
+    description:
+      name: petitparser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.0"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -644,6 +665,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.0"
+  xml:
+    dependency: transitive
+    description:
+      name: xml
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.1.0"
   yaml:
     dependency: transitive
     description:
@@ -653,4 +681,4 @@ packages:
     version: "3.1.1"
 sdks:
   dart: ">=2.17.0 <3.0.0"
-  flutter: ">=2.8.0"
+  flutter: ">=3.0.0"
