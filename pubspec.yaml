@@ -29,6 +29,7 @@ dependencies:
   injectable: ^1.5.3
   get_it: ^7.2.0
   another_flushbar: ^1.10.29
+  uuid: ^3.0.6
 
 dev_dependencies:
   flutter_test:
