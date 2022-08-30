@@ -19,6 +19,13 @@ abstract class ValueObject<T> {
         id,
       );
 
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return value.fold(
+      (l) => Left(l),
+      (r) => const Right(unit),
+    );
+  }
+
   @override
   bool operator ==(covariant Object other) {
     if (identical(this, other)) return true;
