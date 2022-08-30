@@ -37,113 +37,114 @@ class SignInForm extends StatelessWidget {
   }
 
   Widget _buider(BuildContext context, SignInFormState state) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 12,
-        vertical: 16,
-      ),
-      child: Form(
-        autovalidateMode: state.showErrorMessages
-            ? AutovalidateMode.always
-            : AutovalidateMode.disabled,
-        child: ListView(
-          children: [
-            const Text(
-              '📔',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 130),
+    return Form(
+      autovalidateMode: state.showErrorMessages
+          ? AutovalidateMode.always
+          : AutovalidateMode.disabled,
+      child: ListView(
+        padding: const EdgeInsets.all(8),
+        children: [
+          const Text(
+            '📔',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 130),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          TextFormField(
+            decoration: const InputDecoration(
+              prefixIcon: Icon(Icons.email),
+              labelText: 'Email',
             ),
+            autocorrect: false,
+            onChanged: (value) => BlocProvider.of<SignInFormBloc>(context).add(
+              EmailChanged(value),
+            ),
+            validator: (_) => state.emailAddress.value.fold(
+              (l) => l.maybeWhen(
+                invalidEmail: (_) => 'Invalid Email',
+                orElse: () => null,
+              ),
+              (r) => null,
+            ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          TextFormField(
+            decoration: const InputDecoration(
+              prefixIcon: Icon(Icons.lock),
+              labelText: 'Password',
+            ),
+            autocorrect: false,
+            obscureText: true,
+            onChanged: (value) => BlocProvider.of<SignInFormBloc>(context).add(
+              PasswordChanged(value),
+            ),
+            validator: (_) => state.password.value.fold(
+              (l) => l.maybeWhen(
+                shortPassword: (_) => 'Short Password',
+                orElse: () => null,
+              ),
+              (r) => null,
+            ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: TextButton(
+                  onPressed: () {
+                    BlocProvider.of<SignInFormBloc>(context).add(
+                      const SignInWithEmailAndPasswordPressed(),
+                    );
+                  },
+                  child: const Text('SIGN IN'),
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  onPressed: () {
+                    BlocProvider.of<SignInFormBloc>(context).add(
+                      const RegisterWithEmailAndPasswordPressed(),
+                    );
+                  },
+                  child: const Text('REGISTER'),
+                ),
+              ),
+            ],
+          ),
+          ElevatedButton(
+            onPressed: () {
+              BlocProvider.of<SignInFormBloc>(context).add(
+                const SignInWithGooglePressed(),
+              );
+            },
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.resolveWith(
+                (states) => Colors.lightBlue,
+              ),
+            ),
+            child: const Text(
+              "SIGN IN WITH GOOGLE",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          if (state.isSubmitting) ...[
             const SizedBox(
               height: 8,
             ),
-            TextFormField(
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.email),
-                labelText: 'Email',
-              ),
-              autocorrect: false,
-              onChanged: (value) =>
-                  BlocProvider.of<SignInFormBloc>(context).add(
-                EmailChanged(value),
-              ),
-              validator: (_) => state.emailAddress.value.fold(
-                (l) => l.maybeWhen(
-                  invalidEmail: (_) => 'Invalid Email',
-                  orElse: () => null,
-                ),
-                (r) => null,
-              ),
+            const LinearProgressIndicator(
+              value: null,
             ),
-            const SizedBox(
-              height: 8,
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.lock),
-                labelText: 'Password',
-              ),
-              autocorrect: false,
-              obscureText: true,
-              onChanged: (value) =>
-                  BlocProvider.of<SignInFormBloc>(context).add(
-                PasswordChanged(value),
-              ),
-              validator: (_) => state.password.value.fold(
-                (l) => l.maybeWhen(
-                  shortPassword: (_) => 'Short Password',
-                  orElse: () => null,
-                ),
-                (r) => null,
-              ),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {
-                      BlocProvider.of<SignInFormBloc>(context).add(
-                        const SignInWithEmailAndPasswordPressed(),
-                      );
-                    },
-                    child: const Text('SIGN IN'),
-                  ),
-                ),
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {
-                      BlocProvider.of<SignInFormBloc>(context).add(
-                        const RegisterWithEmailAndPasswordPressed(),
-                      );
-                    },
-                    child: const Text('REGISTER'),
-                  ),
-                ),
-              ],
-            ),
-            ElevatedButton(
-              onPressed: () {
-                BlocProvider.of<SignInFormBloc>(context).add(
-                  const SignInWithGooglePressed(),
-                );
-              },
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.resolveWith(
-                  (states) => Colors.lightBlue,
-                ),
-              ),
-              child: const Text(
-                "SIGN IN WITH GOOGLE",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ],
-        ),
+          ]
+        ],
       ),
     );
   }
