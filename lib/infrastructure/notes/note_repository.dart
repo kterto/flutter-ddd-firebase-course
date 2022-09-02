@@ -17,21 +17,66 @@ class NoteRepository implements INoteRepository {
   NoteRepository(this._firebaseFirestore);
 
   @override
-  Future<Either<NoteFailure, Unit>> create(Note note) {
-    // TODO: implement create
-    throw UnimplementedError();
+  Future<Either<NoteFailure, Unit>> create(Note note) async {
+    try {
+      final userDoc = await _firebaseFirestore.userDocument();
+      final noteDTO = NoteDTO.fromDomain(note);
+
+      await userDoc.noteCollection
+          .doc(note.id.getOrCrash())
+          .set(noteDTO.toJson());
+
+      return const Right(unit);
+    } on PlatformException catch (e) {
+      if (e.message?.contains('PERMISSION_DENIED') == true) {
+        return const Left(InsufficientPersmission());
+      } else {
+        return const Left(Unexpected());
+      }
+    } catch (e) {
+      return const Left(Unexpected());
+    }
   }
 
   @override
-  Future<Either<NoteFailure, Unit>> delete(Note note) {
-    // TODO: implement delete
-    throw UnimplementedError();
+  Future<Either<NoteFailure, Unit>> delete(Note note) async {
+    try {
+      final userDoc = await _firebaseFirestore.userDocument();
+
+      await userDoc.noteCollection.doc(note.id.getOrCrash()).delete();
+
+      return const Right(unit);
+    } on PlatformException catch (e) {
+      if (e.message?.contains('PERMISSION_DENIED') == true) {
+        return const Left(InsufficientPersmission());
+      } else {
+        return const Left(Unexpected());
+      }
+    } catch (e) {
+      return const Left(Unexpected());
+    }
   }
 
   @override
-  Future<Either<NoteFailure, Unit>> update(Note note) {
-    // TODO: implement update
-    throw UnimplementedError();
+  Future<Either<NoteFailure, Unit>> update(Note note) async {
+    try {
+      final userDoc = await _firebaseFirestore.userDocument();
+      final noteDTO = NoteDTO.fromDomain(note);
+
+      await userDoc.noteCollection
+          .doc(note.id.getOrCrash())
+          .update(noteDTO.toJson());
+
+      return const Right(unit);
+    } on PlatformException catch (e) {
+      if (e.message?.contains('PERMISSION_DENIED') == true) {
+        return const Left(InsufficientPersmission());
+      } else {
+        return const Left(Unexpected());
+      }
+    } catch (e) {
+      return const Left(Unexpected());
+    }
   }
 
   @override
