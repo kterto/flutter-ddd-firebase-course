@@ -5,4 +5,5 @@ part 'note_failure.freezed.dart';
 @freezed
 class NoteFailure with _$NoteFailure {
   const factory NoteFailure.unexpected() = Unexpected;
+  const factory NoteFailure.insufficientPersmission() = InsufficientPersmission;
 }

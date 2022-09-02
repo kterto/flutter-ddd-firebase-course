@@ -23,6 +23,7 @@ dependencies:
   auto_route: ^5.0.1
   kt_dart: ^0.10.0
   json_annotation: ^4.6.0
+  rxdart: ^0.27.5
 
 dev_dependencies:
   flutter_test:

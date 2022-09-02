@@ -19,32 +19,39 @@ mixin _$NoteFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
+    required TResult Function() insufficientPersmission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? insufficientPersmission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? insufficientPersmission,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Unexpected value) unexpected,
+    required TResult Function(InsufficientPersmission value)
+        insufficientPersmission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
+    TResult Function(InsufficientPersmission value)? insufficientPersmission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
+    TResult Function(InsufficientPersmission value)? insufficientPersmission,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +114,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
+    required TResult Function() insufficientPersmission,
   }) {
     return unexpected();
   }
@@ -115,6 +123,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? insufficientPersmission,
   }) {
     return unexpected?.call();
   }
@@ -123,6 +132,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? insufficientPersmission,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -135,6 +145,8 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Unexpected value) unexpected,
+    required TResult Function(InsufficientPersmission value)
+        insufficientPersmission,
   }) {
     return unexpected(this);
   }
@@ -143,6 +155,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
+    TResult Function(InsufficientPersmission value)? insufficientPersmission,
   }) {
     return unexpected?.call(this);
   }
@@ -151,6 +164,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
+    TResult Function(InsufficientPersmission value)? insufficientPersmission,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -162,4 +176,112 @@ class _$Unexpected implements Unexpected {
 
 abstract class Unexpected implements NoteFailure {
   const factory Unexpected() = _$Unexpected;
+}
+
+/// @nodoc
+abstract class _$$InsufficientPersmissionCopyWith<$Res> {
+  factory _$$InsufficientPersmissionCopyWith(_$InsufficientPersmission value,
+          $Res Function(_$InsufficientPersmission) then) =
+      __$$InsufficientPersmissionCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InsufficientPersmissionCopyWithImpl<$Res>
+    extends _$NoteFailureCopyWithImpl<$Res>
+    implements _$$InsufficientPersmissionCopyWith<$Res> {
+  __$$InsufficientPersmissionCopyWithImpl(_$InsufficientPersmission _value,
+      $Res Function(_$InsufficientPersmission) _then)
+      : super(_value, (v) => _then(v as _$InsufficientPersmission));
+
+  @override
+  _$InsufficientPersmission get _value =>
+      super._value as _$InsufficientPersmission;
+}
+
+/// @nodoc
+
+class _$InsufficientPersmission implements InsufficientPersmission {
+  const _$InsufficientPersmission();
+
+  @override
+  String toString() {
+    return 'NoteFailure.insufficientPersmission()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InsufficientPersmission);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() insufficientPersmission,
+  }) {
+    return insufficientPersmission();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPersmission,
+  }) {
+    return insufficientPersmission?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPersmission,
+    required TResult orElse(),
+  }) {
+    if (insufficientPersmission != null) {
+      return insufficientPersmission();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Unexpected value) unexpected,
+    required TResult Function(InsufficientPersmission value)
+        insufficientPersmission,
+  }) {
+    return insufficientPersmission(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Unexpected value)? unexpected,
+    TResult Function(InsufficientPersmission value)? insufficientPersmission,
+  }) {
+    return insufficientPersmission?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Unexpected value)? unexpected,
+    TResult Function(InsufficientPersmission value)? insufficientPersmission,
+    required TResult orElse(),
+  }) {
+    if (insufficientPersmission != null) {
+      return insufficientPersmission(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InsufficientPersmission implements NoteFailure {
+  const factory InsufficientPersmission() = _$InsufficientPersmission;
 }
