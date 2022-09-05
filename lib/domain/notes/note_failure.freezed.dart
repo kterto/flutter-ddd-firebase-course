@@ -20,18 +20,21 @@ mixin _$NoteFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() insufficientPersmission,
+    required TResult Function() unableToUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPersmission,
+    TResult Function()? unableToUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPersmission,
+    TResult Function()? unableToUpdate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,18 +43,21 @@ mixin _$NoteFailure {
     required TResult Function(Unexpected value) unexpected,
     required TResult Function(InsufficientPersmission value)
         insufficientPersmission,
+    required TResult Function(UnableToUpdate value) unableToUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPersmission value)? insufficientPersmission,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPersmission value)? insufficientPersmission,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -115,6 +121,7 @@ class _$Unexpected implements Unexpected {
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() insufficientPersmission,
+    required TResult Function() unableToUpdate,
   }) {
     return unexpected();
   }
@@ -124,6 +131,7 @@ class _$Unexpected implements Unexpected {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPersmission,
+    TResult Function()? unableToUpdate,
   }) {
     return unexpected?.call();
   }
@@ -133,6 +141,7 @@ class _$Unexpected implements Unexpected {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPersmission,
+    TResult Function()? unableToUpdate,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -147,6 +156,7 @@ class _$Unexpected implements Unexpected {
     required TResult Function(Unexpected value) unexpected,
     required TResult Function(InsufficientPersmission value)
         insufficientPersmission,
+    required TResult Function(UnableToUpdate value) unableToUpdate,
   }) {
     return unexpected(this);
   }
@@ -156,6 +166,7 @@ class _$Unexpected implements Unexpected {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPersmission value)? insufficientPersmission,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
   }) {
     return unexpected?.call(this);
   }
@@ -165,6 +176,7 @@ class _$Unexpected implements Unexpected {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPersmission value)? insufficientPersmission,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -223,6 +235,7 @@ class _$InsufficientPersmission implements InsufficientPersmission {
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() insufficientPersmission,
+    required TResult Function() unableToUpdate,
   }) {
     return insufficientPersmission();
   }
@@ -232,6 +245,7 @@ class _$InsufficientPersmission implements InsufficientPersmission {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPersmission,
+    TResult Function()? unableToUpdate,
   }) {
     return insufficientPersmission?.call();
   }
@@ -241,6 +255,7 @@ class _$InsufficientPersmission implements InsufficientPersmission {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPersmission,
+    TResult Function()? unableToUpdate,
     required TResult orElse(),
   }) {
     if (insufficientPersmission != null) {
@@ -255,6 +270,7 @@ class _$InsufficientPersmission implements InsufficientPersmission {
     required TResult Function(Unexpected value) unexpected,
     required TResult Function(InsufficientPersmission value)
         insufficientPersmission,
+    required TResult Function(UnableToUpdate value) unableToUpdate,
   }) {
     return insufficientPersmission(this);
   }
@@ -264,6 +280,7 @@ class _$InsufficientPersmission implements InsufficientPersmission {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPersmission value)? insufficientPersmission,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
   }) {
     return insufficientPersmission?.call(this);
   }
@@ -273,6 +290,7 @@ class _$InsufficientPersmission implements InsufficientPersmission {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPersmission value)? insufficientPersmission,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
     required TResult orElse(),
   }) {
     if (insufficientPersmission != null) {
@@ -284,4 +302,116 @@ class _$InsufficientPersmission implements InsufficientPersmission {
 
 abstract class InsufficientPersmission implements NoteFailure {
   const factory InsufficientPersmission() = _$InsufficientPersmission;
+}
+
+/// @nodoc
+abstract class _$$UnableToUpdateCopyWith<$Res> {
+  factory _$$UnableToUpdateCopyWith(
+          _$UnableToUpdate value, $Res Function(_$UnableToUpdate) then) =
+      __$$UnableToUpdateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UnableToUpdateCopyWithImpl<$Res>
+    extends _$NoteFailureCopyWithImpl<$Res>
+    implements _$$UnableToUpdateCopyWith<$Res> {
+  __$$UnableToUpdateCopyWithImpl(
+      _$UnableToUpdate _value, $Res Function(_$UnableToUpdate) _then)
+      : super(_value, (v) => _then(v as _$UnableToUpdate));
+
+  @override
+  _$UnableToUpdate get _value => super._value as _$UnableToUpdate;
+}
+
+/// @nodoc
+
+class _$UnableToUpdate implements UnableToUpdate {
+  const _$UnableToUpdate();
+
+  @override
+  String toString() {
+    return 'NoteFailure.unableToUpdate()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UnableToUpdate);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() insufficientPersmission,
+    required TResult Function() unableToUpdate,
+  }) {
+    return unableToUpdate();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPersmission,
+    TResult Function()? unableToUpdate,
+  }) {
+    return unableToUpdate?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPersmission,
+    TResult Function()? unableToUpdate,
+    required TResult orElse(),
+  }) {
+    if (unableToUpdate != null) {
+      return unableToUpdate();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Unexpected value) unexpected,
+    required TResult Function(InsufficientPersmission value)
+        insufficientPersmission,
+    required TResult Function(UnableToUpdate value) unableToUpdate,
+  }) {
+    return unableToUpdate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Unexpected value)? unexpected,
+    TResult Function(InsufficientPersmission value)? insufficientPersmission,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
+  }) {
+    return unableToUpdate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Unexpected value)? unexpected,
+    TResult Function(InsufficientPersmission value)? insufficientPersmission,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
+    required TResult orElse(),
+  }) {
+    if (unableToUpdate != null) {
+      return unableToUpdate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnableToUpdate implements NoteFailure {
+  const factory UnableToUpdate() = _$UnableToUpdate;
 }

@@ -22,7 +22,7 @@ class SplashPage extends StatelessWidget {
     state.when(
       initial: () {},
       authenticated: () {
-        print("I am authenticated");
+        AutoRouter.of(context).replaceNamed('/notes-overview-page');
       },
       unauthenticated: () {
         AutoRouter.of(context).replaceNamed('/sign-in-page');

@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:notes_firebase_ddd_course/presentation/notes/note_overview/notes_overview_page.dart';
 import 'package:notes_firebase_ddd_course/presentation/sign_in/sign_in_page.dart';
 import 'package:notes_firebase_ddd_course/presentation/splash/splash_page.dart';
 
@@ -10,6 +11,9 @@ import 'package:notes_firebase_ddd_course/presentation/splash/splash_page.dart';
     ),
     AutoRoute(
       page: SignInPage,
+    ),
+    AutoRoute(
+      page: NotesOverviewPage,
     ),
   ],
 )
