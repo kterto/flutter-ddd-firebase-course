@@ -86,16 +86,17 @@ class NoteRepository implements INoteRepository {
         .orderBy('serverTimeStamp', descending: true)
         .snapshots()
         .map<Either<NoteFailure, KtList<Note>>>(
-          (snapshot) => Right(
-            snapshot.docs
-                .map((doc) => NoteDTO.fromFirestore(doc).toDomain())
-                .toImmutableList(),
-          ),
-        )
-        .onErrorReturnWith(
+      (snapshot) {
+        return Right(
+          snapshot.docs
+              .map((doc) => NoteDTO.fromFirestore(doc).toDomain())
+              .toImmutableList(),
+        );
+      },
+    ).onErrorReturnWith(
       (e, stacktrace) {
         if (e is PlatformException &&
-            e.message?.contains('permission_denied') == true) {
+            e.message?.contains('PERMISSION_DENIED') == true) {
           return const Left(InsufficientPersmission());
         } else {
           return const Left(Unexpected());
@@ -123,7 +124,7 @@ class NoteRepository implements INoteRepository {
         .onErrorReturnWith(
       (e, stacktrace) {
         if (e is PlatformException &&
-            e.message?.contains('permission_denied') == true) {
+            e.message?.contains('PERMISSION_DENIED') == true) {
           return const Left(InsufficientPersmission());
         } else {
           return const Left(Unexpected());

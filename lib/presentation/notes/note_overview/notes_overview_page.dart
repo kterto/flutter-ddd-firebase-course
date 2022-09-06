@@ -7,6 +7,7 @@ import 'package:notes_firebase_ddd_course/application/notes/note_actor/note_acto
 import 'package:notes_firebase_ddd_course/application/notes/note_watcher/note_watcher_bloc.dart';
 import 'package:notes_firebase_ddd_course/domain/notes/note_failure.dart';
 import 'package:notes_firebase_ddd_course/injection.dart';
+import 'package:notes_firebase_ddd_course/presentation/notes/note_overview/widgets/notes_overview_body_widget.dart';
 
 class NotesOverviewPage extends StatelessWidget {
   const NotesOverviewPage({Key? key}) : super(key: key);
@@ -79,6 +80,7 @@ class NotesOverviewPage extends StatelessWidget {
             },
             child: const Icon(Icons.add),
           ),
+          body: const NotesOverviewBody(),
         ),
       ),
     );
