@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_firebase_ddd_course/application/auth/auth_bloc.dart';
 import 'package:notes_firebase_ddd_course/injection.dart';
-import 'package:notes_firebase_ddd_course/presentation/routes/router.gr.dart';
+import 'package:notes_firebase_ddd_course/presentation/routes/router.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
@@ -37,9 +37,7 @@ class AppWidget extends StatelessWidget {
             ),
           ),
         ),
-        routerDelegate: router.delegate(),
-        routeInformationParser: router.defaultRouteParser(),
-        routeInformationProvider: router.routeInfoProvider(),
+        routerConfig: router.config(),
       ),
     );
   }

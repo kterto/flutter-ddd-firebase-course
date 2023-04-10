@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'todo_item_presentation_classes.dart';
 
@@ -29,39 +29,42 @@ mixin _$TodoItemPrimitive {
 abstract class $TodoItemPrimitiveCopyWith<$Res> {
   factory $TodoItemPrimitiveCopyWith(
           TodoItemPrimitive value, $Res Function(TodoItemPrimitive) then) =
-      _$TodoItemPrimitiveCopyWithImpl<$Res>;
+      _$TodoItemPrimitiveCopyWithImpl<$Res, TodoItemPrimitive>;
+  @useResult
   $Res call({UniqueId id, String name, bool done});
 }
 
 /// @nodoc
-class _$TodoItemPrimitiveCopyWithImpl<$Res>
+class _$TodoItemPrimitiveCopyWithImpl<$Res, $Val extends TodoItemPrimitive>
     implements $TodoItemPrimitiveCopyWith<$Res> {
   _$TodoItemPrimitiveCopyWithImpl(this._value, this._then);
 
-  final TodoItemPrimitive _value;
   // ignore: unused_field
-  final $Res Function(TodoItemPrimitive) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? done = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? done = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      done: done == freezed
+      done: null == done
           ? _value.done
           : done // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -72,36 +75,35 @@ abstract class _$$_TodoItemPrimitiveCopyWith<$Res>
           $Res Function(_$_TodoItemPrimitive) then) =
       __$$_TodoItemPrimitiveCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({UniqueId id, String name, bool done});
 }
 
 /// @nodoc
 class __$$_TodoItemPrimitiveCopyWithImpl<$Res>
-    extends _$TodoItemPrimitiveCopyWithImpl<$Res>
+    extends _$TodoItemPrimitiveCopyWithImpl<$Res, _$_TodoItemPrimitive>
     implements _$$_TodoItemPrimitiveCopyWith<$Res> {
   __$$_TodoItemPrimitiveCopyWithImpl(
       _$_TodoItemPrimitive _value, $Res Function(_$_TodoItemPrimitive) _then)
-      : super(_value, (v) => _then(v as _$_TodoItemPrimitive));
+      : super(_value, _then);
 
-  @override
-  _$_TodoItemPrimitive get _value => super._value as _$_TodoItemPrimitive;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? done = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? done = null,
   }) {
     return _then(_$_TodoItemPrimitive(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      done: done == freezed
+      done: null == done
           ? _value.done
           : done // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -133,20 +135,17 @@ class _$_TodoItemPrimitive extends _TodoItemPrimitive {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TodoItemPrimitive &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.done, done));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.done, done) || other.done == done));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(done));
+  int get hashCode => Object.hash(runtimeType, id, name, done);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TodoItemPrimitiveCopyWith<_$_TodoItemPrimitive> get copyWith =>
       __$$_TodoItemPrimitiveCopyWithImpl<_$_TodoItemPrimitive>(
           this, _$identity);

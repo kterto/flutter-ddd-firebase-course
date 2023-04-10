@@ -1,73 +1,85 @@
-// **************************************************************************
-// AutoRouteGenerator
-// **************************************************************************
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
-//
+
 // ignore_for_file: type=lint
+// coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i4;
-import 'package:flutter/material.dart' as _i5;
+import 'package:notes_firebase_ddd_course/presentation/notes/note_overview/notes_overview_page.dart'
+    as _i3;
+import 'package:notes_firebase_ddd_course/presentation/sign_in/sign_in_page.dart'
+    as _i2;
+import 'package:notes_firebase_ddd_course/presentation/splash/splash_page.dart'
+    as _i1;
 
-import '../notes/note_overview/notes_overview_page.dart' as _i3;
-import '../sign_in/sign_in_page.dart' as _i2;
-import '../splash/splash_page.dart' as _i1;
-
-class AppRouter extends _i4.RootStackRouter {
-  AppRouter([_i5.GlobalKey<_i5.NavigatorState>? navigatorKey])
-      : super(navigatorKey);
+abstract class $AppRouter extends _i4.RootStackRouter {
+  $AppRouter({super.navigatorKey});
 
   @override
   final Map<String, _i4.PageFactory> pagesMap = {
-    SplashPageRoute.name: (routeData) {
-      return _i4.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i1.SplashPage());
+    SplashRoute.name: (routeData) {
+      return _i4.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i1.SplashPage(),
+      );
     },
-    SignInPageRoute.name: (routeData) {
-      return _i4.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i2.SignInPage());
+    SignInRoute.name: (routeData) {
+      return _i4.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i2.SignInPage(),
+      );
     },
-    NotesOverviewPageRoute.name: (routeData) {
-      return _i4.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i3.NotesOverviewPage());
-    }
+    NotesOverviewRoute.name: (routeData) {
+      return _i4.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i3.NotesOverviewPage(),
+      );
+    },
   };
-
-  @override
-  List<_i4.RouteConfig> get routes => [
-        _i4.RouteConfig(SplashPageRoute.name, path: '/'),
-        _i4.RouteConfig(SignInPageRoute.name, path: '/sign-in-page'),
-        _i4.RouteConfig(NotesOverviewPageRoute.name,
-            path: '/notes-overview-page')
-      ];
 }
 
 /// generated route for
 /// [_i1.SplashPage]
-class SplashPageRoute extends _i4.PageRouteInfo<void> {
-  const SplashPageRoute() : super(SplashPageRoute.name, path: '/');
+class SplashRoute extends _i4.PageRouteInfo<void> {
+  const SplashRoute({List<_i4.PageRouteInfo>? children})
+      : super(
+          SplashRoute.name,
+          initialChildren: children,
+        );
 
-  static const String name = 'SplashPageRoute';
+  static const String name = 'SplashRoute';
+
+  static const _i4.PageInfo<void> page = _i4.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i2.SignInPage]
-class SignInPageRoute extends _i4.PageRouteInfo<void> {
-  const SignInPageRoute() : super(SignInPageRoute.name, path: '/sign-in-page');
+class SignInRoute extends _i4.PageRouteInfo<void> {
+  const SignInRoute({List<_i4.PageRouteInfo>? children})
+      : super(
+          SignInRoute.name,
+          initialChildren: children,
+        );
 
-  static const String name = 'SignInPageRoute';
+  static const String name = 'SignInRoute';
+
+  static const _i4.PageInfo<void> page = _i4.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i3.NotesOverviewPage]
-class NotesOverviewPageRoute extends _i4.PageRouteInfo<void> {
-  const NotesOverviewPageRoute()
-      : super(NotesOverviewPageRoute.name, path: '/notes-overview-page');
+class NotesOverviewRoute extends _i4.PageRouteInfo<void> {
+  const NotesOverviewRoute({List<_i4.PageRouteInfo>? children})
+      : super(
+          NotesOverviewRoute.name,
+          initialChildren: children,
+        );
 
-  static const String name = 'NotesOverviewPageRoute';
+  static const String name = 'NotesOverviewRoute';
+
+  static const _i4.PageInfo<void> page = _i4.PageInfo<void>(name);
 }

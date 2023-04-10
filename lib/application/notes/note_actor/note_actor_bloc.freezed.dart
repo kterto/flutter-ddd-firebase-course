@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'note_actor_bloc.dart';
 
@@ -24,7 +24,7 @@ mixin _$NoteActorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Note note)? deleted,
+    TResult? Function(Note note)? deleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,7 +40,7 @@ mixin _$NoteActorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Deleted value)? deleted,
+    TResult? Function(_Deleted value)? deleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,37 +59,41 @@ mixin _$NoteActorEvent {
 abstract class $NoteActorEventCopyWith<$Res> {
   factory $NoteActorEventCopyWith(
           NoteActorEvent value, $Res Function(NoteActorEvent) then) =
-      _$NoteActorEventCopyWithImpl<$Res>;
+      _$NoteActorEventCopyWithImpl<$Res, NoteActorEvent>;
+  @useResult
   $Res call({Note note});
 
   $NoteCopyWith<$Res> get note;
 }
 
 /// @nodoc
-class _$NoteActorEventCopyWithImpl<$Res>
+class _$NoteActorEventCopyWithImpl<$Res, $Val extends NoteActorEvent>
     implements $NoteActorEventCopyWith<$Res> {
   _$NoteActorEventCopyWithImpl(this._value, this._then);
 
-  final NoteActorEvent _value;
   // ignore: unused_field
-  final $Res Function(NoteActorEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? note = freezed,
+    Object? note = null,
   }) {
     return _then(_value.copyWith(
-      note: note == freezed
+      note: null == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
               as Note,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $NoteCopyWith<$Res> get note {
     return $NoteCopyWith<$Res>(_value.note, (value) {
-      return _then(_value.copyWith(note: value));
+      return _then(_value.copyWith(note: value) as $Val);
     });
   }
 }
@@ -101,6 +105,7 @@ abstract class _$$_DeletedCopyWith<$Res>
           _$_Deleted value, $Res Function(_$_Deleted) then) =
       __$$_DeletedCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Note note});
 
   @override
@@ -108,20 +113,19 @@ abstract class _$$_DeletedCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DeletedCopyWithImpl<$Res> extends _$NoteActorEventCopyWithImpl<$Res>
+class __$$_DeletedCopyWithImpl<$Res>
+    extends _$NoteActorEventCopyWithImpl<$Res, _$_Deleted>
     implements _$$_DeletedCopyWith<$Res> {
   __$$_DeletedCopyWithImpl(_$_Deleted _value, $Res Function(_$_Deleted) _then)
-      : super(_value, (v) => _then(v as _$_Deleted));
+      : super(_value, _then);
 
-  @override
-  _$_Deleted get _value => super._value as _$_Deleted;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? note = freezed,
+    Object? note = null,
   }) {
     return _then(_$_Deleted(
-      note == freezed
+      null == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
               as Note,
@@ -147,15 +151,15 @@ class _$_Deleted implements _Deleted {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Deleted &&
-            const DeepCollectionEquality().equals(other.note, note));
+            (identical(other.note, note) || other.note == note));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(note));
+  int get hashCode => Object.hash(runtimeType, note);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DeletedCopyWith<_$_Deleted> get copyWith =>
       __$$_DeletedCopyWithImpl<_$_Deleted>(this, _$identity);
 
@@ -170,7 +174,7 @@ class _$_Deleted implements _Deleted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Note note)? deleted,
+    TResult? Function(Note note)? deleted,
   }) {
     return deleted?.call(note);
   }
@@ -198,7 +202,7 @@ class _$_Deleted implements _Deleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Deleted value)? deleted,
+    TResult? Function(_Deleted value)? deleted,
   }) {
     return deleted?.call(this);
   }
@@ -239,10 +243,10 @@ mixin _$NoteActorState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(NoteFailure noteFailure)? deleteFailure,
-    TResult Function()? deleteSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(NoteFailure noteFailure)? deleteFailure,
+    TResult? Function()? deleteSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -264,10 +268,10 @@ mixin _$NoteActorState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_DeleteFailure value)? deleteFailure,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -285,17 +289,18 @@ mixin _$NoteActorState {
 abstract class $NoteActorStateCopyWith<$Res> {
   factory $NoteActorStateCopyWith(
           NoteActorState value, $Res Function(NoteActorState) then) =
-      _$NoteActorStateCopyWithImpl<$Res>;
+      _$NoteActorStateCopyWithImpl<$Res, NoteActorState>;
 }
 
 /// @nodoc
-class _$NoteActorStateCopyWithImpl<$Res>
+class _$NoteActorStateCopyWithImpl<$Res, $Val extends NoteActorState>
     implements $NoteActorStateCopyWith<$Res> {
   _$NoteActorStateCopyWithImpl(this._value, this._then);
 
-  final NoteActorState _value;
   // ignore: unused_field
-  final $Res Function(NoteActorState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -306,13 +311,11 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$NoteActorStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$NoteActorStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -348,10 +351,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(NoteFailure noteFailure)? deleteFailure,
-    TResult Function()? deleteSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(NoteFailure noteFailure)? deleteFailure,
+    TResult? Function()? deleteSuccess,
   }) {
     return initial?.call();
   }
@@ -385,10 +388,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_DeleteFailure value)? deleteFailure,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
   }) {
     return initial?.call(this);
   }
@@ -422,14 +425,11 @@ abstract class _$$_ActionInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ActionInProgressCopyWithImpl<$Res>
-    extends _$NoteActorStateCopyWithImpl<$Res>
+    extends _$NoteActorStateCopyWithImpl<$Res, _$_ActionInProgress>
     implements _$$_ActionInProgressCopyWith<$Res> {
   __$$_ActionInProgressCopyWithImpl(
       _$_ActionInProgress _value, $Res Function(_$_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _$_ActionInProgress));
-
-  @override
-  _$_ActionInProgress get _value => super._value as _$_ActionInProgress;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -465,10 +465,10 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(NoteFailure noteFailure)? deleteFailure,
-    TResult Function()? deleteSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(NoteFailure noteFailure)? deleteFailure,
+    TResult? Function()? deleteSuccess,
   }) {
     return actionInProgress?.call();
   }
@@ -502,10 +502,10 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_DeleteFailure value)? deleteFailure,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
   }) {
     return actionInProgress?.call(this);
   }
@@ -535,6 +535,7 @@ abstract class _$$_DeleteFailureCopyWith<$Res> {
   factory _$$_DeleteFailureCopyWith(
           _$_DeleteFailure value, $Res Function(_$_DeleteFailure) then) =
       __$$_DeleteFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({NoteFailure noteFailure});
 
   $NoteFailureCopyWith<$Res> get noteFailure;
@@ -542,21 +543,19 @@ abstract class _$$_DeleteFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_DeleteFailureCopyWithImpl<$Res>
-    extends _$NoteActorStateCopyWithImpl<$Res>
+    extends _$NoteActorStateCopyWithImpl<$Res, _$_DeleteFailure>
     implements _$$_DeleteFailureCopyWith<$Res> {
   __$$_DeleteFailureCopyWithImpl(
       _$_DeleteFailure _value, $Res Function(_$_DeleteFailure) _then)
-      : super(_value, (v) => _then(v as _$_DeleteFailure));
+      : super(_value, _then);
 
-  @override
-  _$_DeleteFailure get _value => super._value as _$_DeleteFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? noteFailure = freezed,
+    Object? noteFailure = null,
   }) {
     return _then(_$_DeleteFailure(
-      noteFailure == freezed
+      null == noteFailure
           ? _value.noteFailure
           : noteFailure // ignore: cast_nullable_to_non_nullable
               as NoteFailure,
@@ -564,6 +563,7 @@ class __$$_DeleteFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $NoteFailureCopyWith<$Res> get noteFailure {
     return $NoteFailureCopyWith<$Res>(_value.noteFailure, (value) {
       return _then(_value.copyWith(noteFailure: value));
@@ -589,16 +589,16 @@ class _$_DeleteFailure implements _DeleteFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DeleteFailure &&
-            const DeepCollectionEquality()
-                .equals(other.noteFailure, noteFailure));
+            (identical(other.noteFailure, noteFailure) ||
+                other.noteFailure == noteFailure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(noteFailure));
+  int get hashCode => Object.hash(runtimeType, noteFailure);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DeleteFailureCopyWith<_$_DeleteFailure> get copyWith =>
       __$$_DeleteFailureCopyWithImpl<_$_DeleteFailure>(this, _$identity);
 
@@ -616,10 +616,10 @@ class _$_DeleteFailure implements _DeleteFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(NoteFailure noteFailure)? deleteFailure,
-    TResult Function()? deleteSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(NoteFailure noteFailure)? deleteFailure,
+    TResult? Function()? deleteSuccess,
   }) {
     return deleteFailure?.call(noteFailure);
   }
@@ -653,10 +653,10 @@ class _$_DeleteFailure implements _DeleteFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_DeleteFailure value)? deleteFailure,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
   }) {
     return deleteFailure?.call(this);
   }
@@ -696,14 +696,11 @@ abstract class _$$_DeleteSuccessCopyWith<$Res> {
 
 /// @nodoc
 class __$$_DeleteSuccessCopyWithImpl<$Res>
-    extends _$NoteActorStateCopyWithImpl<$Res>
+    extends _$NoteActorStateCopyWithImpl<$Res, _$_DeleteSuccess>
     implements _$$_DeleteSuccessCopyWith<$Res> {
   __$$_DeleteSuccessCopyWithImpl(
       _$_DeleteSuccess _value, $Res Function(_$_DeleteSuccess) _then)
-      : super(_value, (v) => _then(v as _$_DeleteSuccess));
-
-  @override
-  _$_DeleteSuccess get _value => super._value as _$_DeleteSuccess;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -739,10 +736,10 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(NoteFailure noteFailure)? deleteFailure,
-    TResult Function()? deleteSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(NoteFailure noteFailure)? deleteFailure,
+    TResult? Function()? deleteSuccess,
   }) {
     return deleteSuccess?.call();
   }
@@ -776,10 +773,10 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_DeleteFailure value)? deleteFailure,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
   }) {
     return deleteSuccess?.call(this);
   }

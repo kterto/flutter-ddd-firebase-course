@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'note_dtos.dart';
 
@@ -36,7 +36,8 @@ mixin _$NoteDTO {
 /// @nodoc
 abstract class $NoteDTOCopyWith<$Res> {
   factory $NoteDTOCopyWith(NoteDTO value, $Res Function(NoteDTO) then) =
-      _$NoteDTOCopyWithImpl<$Res>;
+      _$NoteDTOCopyWithImpl<$Res, NoteDTO>;
+  @useResult
   $Res call(
       {@JsonKey(ignore: true) String? id,
       String body,
@@ -46,43 +47,46 @@ abstract class $NoteDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NoteDTOCopyWithImpl<$Res> implements $NoteDTOCopyWith<$Res> {
+class _$NoteDTOCopyWithImpl<$Res, $Val extends NoteDTO>
+    implements $NoteDTOCopyWith<$Res> {
   _$NoteDTOCopyWithImpl(this._value, this._then);
 
-  final NoteDTO _value;
   // ignore: unused_field
-  final $Res Function(NoteDTO) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
-    Object? body = freezed,
-    Object? color = freezed,
-    Object? todos = freezed,
-    Object? serverTimeStamp = freezed,
+    Object? body = null,
+    Object? color = null,
+    Object? todos = null,
+    Object? serverTimeStamp = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      body: body == freezed
+      body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as String,
-      color: color == freezed
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as int,
-      todos: todos == freezed
+      todos: null == todos
           ? _value.todos
           : todos // ignore: cast_nullable_to_non_nullable
               as List<TodoItemDTO>,
-      serverTimeStamp: serverTimeStamp == freezed
+      serverTimeStamp: null == serverTimeStamp
           ? _value.serverTimeStamp
           : serverTimeStamp // ignore: cast_nullable_to_non_nullable
               as FieldValue,
-    ));
+    ) as $Val);
   }
 }
 
@@ -92,6 +96,7 @@ abstract class _$$_NoteDTOCopyWith<$Res> implements $NoteDTOCopyWith<$Res> {
           _$_NoteDTO value, $Res Function(_$_NoteDTO) then) =
       __$$_NoteDTOCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(ignore: true) String? id,
       String body,
@@ -101,40 +106,39 @@ abstract class _$$_NoteDTOCopyWith<$Res> implements $NoteDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_NoteDTOCopyWithImpl<$Res> extends _$NoteDTOCopyWithImpl<$Res>
+class __$$_NoteDTOCopyWithImpl<$Res>
+    extends _$NoteDTOCopyWithImpl<$Res, _$_NoteDTO>
     implements _$$_NoteDTOCopyWith<$Res> {
   __$$_NoteDTOCopyWithImpl(_$_NoteDTO _value, $Res Function(_$_NoteDTO) _then)
-      : super(_value, (v) => _then(v as _$_NoteDTO));
+      : super(_value, _then);
 
-  @override
-  _$_NoteDTO get _value => super._value as _$_NoteDTO;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
-    Object? body = freezed,
-    Object? color = freezed,
-    Object? todos = freezed,
-    Object? serverTimeStamp = freezed,
+    Object? body = null,
+    Object? color = null,
+    Object? todos = null,
+    Object? serverTimeStamp = null,
   }) {
     return _then(_$_NoteDTO(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      body: body == freezed
+      body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as String,
-      color: color == freezed
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as int,
-      todos: todos == freezed
+      todos: null == todos
           ? _value._todos
           : todos // ignore: cast_nullable_to_non_nullable
               as List<TodoItemDTO>,
-      serverTimeStamp: serverTimeStamp == freezed
+      serverTimeStamp: null == serverTimeStamp
           ? _value.serverTimeStamp
           : serverTimeStamp // ignore: cast_nullable_to_non_nullable
               as FieldValue,
@@ -167,6 +171,7 @@ class _$_NoteDTO extends _NoteDTO {
   final List<TodoItemDTO> _todos;
   @override
   List<TodoItemDTO> get todos {
+    if (_todos is EqualUnmodifiableListView) return _todos;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_todos);
   }
@@ -185,26 +190,22 @@ class _$_NoteDTO extends _NoteDTO {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NoteDTO &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.body, body) &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.body, body) || other.body == body) &&
+            (identical(other.color, color) || other.color == color) &&
             const DeepCollectionEquality().equals(other._todos, _todos) &&
-            const DeepCollectionEquality()
-                .equals(other.serverTimeStamp, serverTimeStamp));
+            (identical(other.serverTimeStamp, serverTimeStamp) ||
+                other.serverTimeStamp == serverTimeStamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(body),
-      const DeepCollectionEquality().hash(color),
-      const DeepCollectionEquality().hash(_todos),
-      const DeepCollectionEquality().hash(serverTimeStamp));
+  int get hashCode => Object.hash(runtimeType, id, body, color,
+      const DeepCollectionEquality().hash(_todos), serverTimeStamp);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_NoteDTOCopyWith<_$_NoteDTO> get copyWith =>
       __$$_NoteDTOCopyWithImpl<_$_NoteDTO>(this, _$identity);
 
@@ -267,38 +268,42 @@ mixin _$TodoItemDTO {
 abstract class $TodoItemDTOCopyWith<$Res> {
   factory $TodoItemDTOCopyWith(
           TodoItemDTO value, $Res Function(TodoItemDTO) then) =
-      _$TodoItemDTOCopyWithImpl<$Res>;
+      _$TodoItemDTOCopyWithImpl<$Res, TodoItemDTO>;
+  @useResult
   $Res call({String id, String name, bool done});
 }
 
 /// @nodoc
-class _$TodoItemDTOCopyWithImpl<$Res> implements $TodoItemDTOCopyWith<$Res> {
+class _$TodoItemDTOCopyWithImpl<$Res, $Val extends TodoItemDTO>
+    implements $TodoItemDTOCopyWith<$Res> {
   _$TodoItemDTOCopyWithImpl(this._value, this._then);
 
-  final TodoItemDTO _value;
   // ignore: unused_field
-  final $Res Function(TodoItemDTO) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? done = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? done = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      done: done == freezed
+      done: null == done
           ? _value.done
           : done // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -309,35 +314,35 @@ abstract class _$$_TodoItemDTOCopyWith<$Res>
           _$_TodoItemDTO value, $Res Function(_$_TodoItemDTO) then) =
       __$$_TodoItemDTOCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, String name, bool done});
 }
 
 /// @nodoc
-class __$$_TodoItemDTOCopyWithImpl<$Res> extends _$TodoItemDTOCopyWithImpl<$Res>
+class __$$_TodoItemDTOCopyWithImpl<$Res>
+    extends _$TodoItemDTOCopyWithImpl<$Res, _$_TodoItemDTO>
     implements _$$_TodoItemDTOCopyWith<$Res> {
   __$$_TodoItemDTOCopyWithImpl(
       _$_TodoItemDTO _value, $Res Function(_$_TodoItemDTO) _then)
-      : super(_value, (v) => _then(v as _$_TodoItemDTO));
+      : super(_value, _then);
 
-  @override
-  _$_TodoItemDTO get _value => super._value as _$_TodoItemDTO;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? done = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? done = null,
   }) {
     return _then(_$_TodoItemDTO(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      done: done == freezed
+      done: null == done
           ? _value.done
           : done // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -372,21 +377,18 @@ class _$_TodoItemDTO extends _TodoItemDTO {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TodoItemDTO &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.done, done));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.done, done) || other.done == done));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(done));
+  int get hashCode => Object.hash(runtimeType, id, name, done);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TodoItemDTOCopyWith<_$_TodoItemDTO> get copyWith =>
       __$$_TodoItemDTOCopyWithImpl<_$_TodoItemDTO>(this, _$identity);
 

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'note_failure.dart';
 
@@ -25,9 +25,9 @@ mixin _$NoteFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? insufficientPersmission,
-    TResult Function()? unableToUpdate,
+    TResult? Function()? unexpected,
+    TResult? Function()? insufficientPersmission,
+    TResult? Function()? unableToUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,9 +48,9 @@ mixin _$NoteFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(InsufficientPersmission value)? insufficientPersmission,
-    TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(InsufficientPersmission value)? insufficientPersmission,
+    TResult? Function(UnableToUpdate value)? unableToUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,16 +67,18 @@ mixin _$NoteFailure {
 abstract class $NoteFailureCopyWith<$Res> {
   factory $NoteFailureCopyWith(
           NoteFailure value, $Res Function(NoteFailure) then) =
-      _$NoteFailureCopyWithImpl<$Res>;
+      _$NoteFailureCopyWithImpl<$Res, NoteFailure>;
 }
 
 /// @nodoc
-class _$NoteFailureCopyWithImpl<$Res> implements $NoteFailureCopyWith<$Res> {
+class _$NoteFailureCopyWithImpl<$Res, $Val extends NoteFailure>
+    implements $NoteFailureCopyWith<$Res> {
   _$NoteFailureCopyWithImpl(this._value, this._then);
 
-  final NoteFailure _value;
   // ignore: unused_field
-  final $Res Function(NoteFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -87,14 +89,12 @@ abstract class _$$UnexpectedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UnexpectedCopyWithImpl<$Res> extends _$NoteFailureCopyWithImpl<$Res>
+class __$$UnexpectedCopyWithImpl<$Res>
+    extends _$NoteFailureCopyWithImpl<$Res, _$Unexpected>
     implements _$$UnexpectedCopyWith<$Res> {
   __$$UnexpectedCopyWithImpl(
       _$Unexpected _value, $Res Function(_$Unexpected) _then)
-      : super(_value, (v) => _then(v as _$Unexpected));
-
-  @override
-  _$Unexpected get _value => super._value as _$Unexpected;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -129,9 +129,9 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? insufficientPersmission,
-    TResult Function()? unableToUpdate,
+    TResult? Function()? unexpected,
+    TResult? Function()? insufficientPersmission,
+    TResult? Function()? unableToUpdate,
   }) {
     return unexpected?.call();
   }
@@ -164,9 +164,9 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(InsufficientPersmission value)? insufficientPersmission,
-    TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(InsufficientPersmission value)? insufficientPersmission,
+    TResult? Function(UnableToUpdate value)? unableToUpdate,
   }) {
     return unexpected?.call(this);
   }
@@ -199,15 +199,11 @@ abstract class _$$InsufficientPersmissionCopyWith<$Res> {
 
 /// @nodoc
 class __$$InsufficientPersmissionCopyWithImpl<$Res>
-    extends _$NoteFailureCopyWithImpl<$Res>
+    extends _$NoteFailureCopyWithImpl<$Res, _$InsufficientPersmission>
     implements _$$InsufficientPersmissionCopyWith<$Res> {
   __$$InsufficientPersmissionCopyWithImpl(_$InsufficientPersmission _value,
       $Res Function(_$InsufficientPersmission) _then)
-      : super(_value, (v) => _then(v as _$InsufficientPersmission));
-
-  @override
-  _$InsufficientPersmission get _value =>
-      super._value as _$InsufficientPersmission;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -243,9 +239,9 @@ class _$InsufficientPersmission implements InsufficientPersmission {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? insufficientPersmission,
-    TResult Function()? unableToUpdate,
+    TResult? Function()? unexpected,
+    TResult? Function()? insufficientPersmission,
+    TResult? Function()? unableToUpdate,
   }) {
     return insufficientPersmission?.call();
   }
@@ -278,9 +274,9 @@ class _$InsufficientPersmission implements InsufficientPersmission {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(InsufficientPersmission value)? insufficientPersmission,
-    TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(InsufficientPersmission value)? insufficientPersmission,
+    TResult? Function(UnableToUpdate value)? unableToUpdate,
   }) {
     return insufficientPersmission?.call(this);
   }
@@ -313,14 +309,11 @@ abstract class _$$UnableToUpdateCopyWith<$Res> {
 
 /// @nodoc
 class __$$UnableToUpdateCopyWithImpl<$Res>
-    extends _$NoteFailureCopyWithImpl<$Res>
+    extends _$NoteFailureCopyWithImpl<$Res, _$UnableToUpdate>
     implements _$$UnableToUpdateCopyWith<$Res> {
   __$$UnableToUpdateCopyWithImpl(
       _$UnableToUpdate _value, $Res Function(_$UnableToUpdate) _then)
-      : super(_value, (v) => _then(v as _$UnableToUpdate));
-
-  @override
-  _$UnableToUpdate get _value => super._value as _$UnableToUpdate;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -355,9 +348,9 @@ class _$UnableToUpdate implements UnableToUpdate {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? insufficientPersmission,
-    TResult Function()? unableToUpdate,
+    TResult? Function()? unexpected,
+    TResult? Function()? insufficientPersmission,
+    TResult? Function()? unableToUpdate,
   }) {
     return unableToUpdate?.call();
   }
@@ -390,9 +383,9 @@ class _$UnableToUpdate implements UnableToUpdate {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(InsufficientPersmission value)? insufficientPersmission,
-    TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(InsufficientPersmission value)? insufficientPersmission,
+    TResult? Function(UnableToUpdate value)? unableToUpdate,
   }) {
     return unableToUpdate?.call(this);
   }

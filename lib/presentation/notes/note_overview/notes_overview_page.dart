@@ -10,6 +10,7 @@ import 'package:notes_firebase_ddd_course/injection.dart';
 import 'package:notes_firebase_ddd_course/presentation/notes/note_overview/widgets/notes_overview_body_widget.dart';
 import 'package:notes_firebase_ddd_course/presentation/notes/note_overview/widgets/uncompleted_switch.dart';
 
+@RoutePage()
 class NotesOverviewPage extends StatelessWidget {
   const NotesOverviewPage({Key? key}) : super(key: key);
 
