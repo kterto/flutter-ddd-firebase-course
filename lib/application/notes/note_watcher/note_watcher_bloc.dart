@@ -19,14 +19,16 @@ class NoteWatcherBloc extends Bloc<NoteWatcherEvent, NoteWatcherState> {
   StreamSubscription? _notesSubscription;
 
   NoteWatcherBloc(this._noteRepository) : super(const _Initial()) {
-    on<NoteWatcherEvent>((event, emit) async {
-      await event.map(
-        watchAllStarted: (event) => _onWatchAllStarted(event, emit),
-        watchUncompletedStarted: (event) =>
-            _onWatchUncompletedStarted(event, emit),
-        notesReceived: (event) => _onNotesReceived(event, emit),
-      );
-    });
+    on<NoteWatcherEvent>(
+      (event, emit) async {
+        await event.map(
+          watchAllStarted: (event) => _onWatchAllStarted(event, emit),
+          watchUncompletedStarted: (event) =>
+              _onWatchUncompletedStarted(event, emit),
+          notesReceived: (event) => _onNotesReceived(event, emit),
+        );
+      },
+    );
   }
 
   Future<void> _onWatchAllStarted(
